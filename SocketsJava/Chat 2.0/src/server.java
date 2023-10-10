@@ -110,7 +110,8 @@ class user extends Thread
 
     public void run()
     {
-        Scanner in = new Scanner(System.in);
+        @SuppressWarnings("unused")
+		Scanner in = new Scanner(System.in);
         String message;
         while(true)
         {

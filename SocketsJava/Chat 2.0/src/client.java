@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
-
 import java.util.Scanner;
 import java.io.*;
 import java.net.*;
@@ -19,7 +17,9 @@ public class client
     static String username;
 
 
-    //-------For File sharing------------
+	/**
+	 * File sharing
+	 */
     static FileInputStream fis = null;
     static BufferedInputStream bis = null;
     static OutputStream os = null;
@@ -50,9 +50,9 @@ public class client
             JFrame frame3 = new JFrame("Choose a file to send");
 
 
-//----------------------------------------------------------------
-//---------------------- FRAME 2----------------------------------
-//----------------------------------------------------------------
+        	/**
+        	 * Frame 2
+        	 */
 
             frame2.setSize(500,500);
             frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -117,54 +117,49 @@ public class client
                                         }
                                     });
 //----------------------------------------------------------------
-//---------------------- FRAME 2 ends ----------------------------
-//----------------------------------------------------------------
 
 
 
-//----------------------------------------------------------------
-//------------------------ FRAME 1 -------------------------------
-//----------------------------------------------------------------
+
+        	/**
+        	 * Frame 1
+        	 */
 
             frame1.setSize(517,363);
             frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame1.getContentPane().setLayout(null);
 
 
-            //----For bg image-----------
+            //backgrnd image
             JLabel background=new JLabel(new ImageIcon("logo.png"),JLabel.CENTER);
             background.setBounds(0, 0, 486, 95);
             frame1.getContentPane().add(background);
-            //---------------------------
 
 
-
-            //------Label-----------------
+            //Label
             JLabel enter = new JLabel("Username");
             enter.setBounds(85, 149, 76, 13);
             frame1.getContentPane().add(enter);
-            //----------------------------
 
 
-            //------Username Textfield-------
+            //Username Textfield
             JTextField usernameTextArea = new JTextField(10);
             usernameTextArea.setBounds(202, 146, 119, 19);
             frame1.getContentPane().add(usernameTextArea);
-            //----------------------------
 
 
-            //-------Login Button-------------
+            //Login Button
             JButton login = new JButton("Login");
             login.setBounds(224, 213, 73, 21);
             frame1.getContentPane().add(login);
             
-            //------Password Textfield-------
+            //Password Textfield
             JTextField textField = new JTextField(0);
             textField.setBounds(202, 184, 119, 19);
             frame1.getContentPane().add(textField);
             textField.setColumns(10);
             
-            //------PASSWORD label-------
+            //PASSWORD label
             JLabel lblNewLabel = new JLabel("Password");
             lblNewLabel.setBounds(85, 187, 76, 13);
             frame1.getContentPane().add(lblNewLabel);
@@ -179,7 +174,7 @@ public class client
 
                                             try
                                             {
-                                                s = new Socket("localhost", 7777);
+                                                s = new Socket("192.168.247.134", 7777);
                                                 dos = new DataOutputStream(s.getOutputStream());
                                                 dis = new DataInputStream(s.getInputStream());
 
@@ -197,19 +192,18 @@ public class client
                                         }
                                     });
 
-            //-------------------------------
+
 
 
             frame1.setVisible(true);
 //----------------------------------------------------------------
-//---------------------- FRAME 1 ends ----------------------------
-//----------------------------------------------------------------
 
 
 
-//----------------------------------------------------------------
-//---------------------- FRAME 3 ---------------------------------
-//----------------------------------------------------------------
+
+        	/**
+        	 * Frame 3
+        	 */
             frame3.setSize(500,700);
             frame3.setLayout(new GridBagLayout());
 
@@ -257,8 +251,7 @@ public class client
 
 
 //----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
+
 
 
     }
